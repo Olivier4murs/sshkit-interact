@@ -12,7 +12,7 @@ module SSHKit
           :ssh,
           *ssh_cmd_args,
           @host.hostname,
-          %Q{'$SHELL -l -c "#{@command.to_command}"'}
+          %Q{'sudo -u www-data $SHELL -l -c "#{@command.to_command}"'}
         ].join(' ')
       end
 
